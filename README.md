@@ -13,6 +13,16 @@ License
 =====
 This software is released under the MIT license.
 
+Authentication flow
+=====
+The goal of the authentication flow is to obtain an access token. Once you have the access token, the SDK will keep it in the user's session. If you want to be able to re-use the token, it is up to you to store it somewhere (in your database, for example). You then must restore it in the VkSDK object using the setAccessToken() method. You should also store and restore the user identifier. You can get it by using the getUserId() method, and restore it with the setUserId() method.
+
+The authentication flow is a two-step process:
+- Create a VkSDK object with your client id, your client secret and an address on your site to be redirected to after authenticating on vk.com
+- Once the client is redirected on the aforementioned address, get the 'code' URL parameter and submit it to the loginWithCode() method.
+
+Congratulations you are now authenticated. You are advised to store somewhere the access token (VkSDK->getAccessToken()) and the user id (VkSDK->getUserId()). Then when using the SDK, you don't need to specify the client secret nor the redirect URI anymore, but you must restore the access token and the user id if you are using a new session.
+
 Example
 =====
     <?php
