@@ -1,5 +1,5 @@
-VkSDK
-=====
+VkSDK.PHP
+=========
 
 Non-official SDK for Vk written in PHP.
 
