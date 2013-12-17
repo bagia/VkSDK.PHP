@@ -44,8 +44,8 @@ Example
         'http://www.example.com/SimpleVkExample?redirect=1'
     );
     
-    // If the user is not identified, getAccessToken()
-    // will return FALSE.
+    // If the user is not authenticated, getAccessToken()
+    // will return NULL.
     if (!$sdk->getAccessToken()) {
         // We are not authenticated
     
