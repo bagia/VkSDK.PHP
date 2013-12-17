@@ -25,6 +25,7 @@ Congratulations you are now authenticated. You are advised to store somewhere th
 
 Example
 =====
+```php
     <?php
     /**
     * @brief Helper class to use the Vk REST API
@@ -35,14 +36,16 @@ Example
     // Assume the URL of the current page is:
     // http://www.example.com/SimpleVkExample
     
-    require_once('/Path/To/VkSDK.php');
+    require_once('VkSDK.php');
     
-    $sdk = new VkSDK(
+    $sdk = new \VkSDK(
         'Put your client ID here', // Client ID
         'Put your client Secret here', // Client Secret
         'http://www.example.com/SimpleVkExample?redirect=1'
     );
     
+    // If the user is not identified, getAccessToken()
+    // will return FALSE.
     if (!$sdk->getAccessToken()) {
         // We are not authenticated
     
@@ -72,3 +75,4 @@ Example
        'owner_id' => $sdk->getUserId()
     ));
     var_dump($wall);
+```
